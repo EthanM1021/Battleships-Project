@@ -21,6 +21,12 @@ function getDimensions(string $fileName): void {
 
     displayColumnHeaders($firstDimension);
     displayRows($secondDimension, $firstDimension);
+  } else {
+    $firstDimension = DEFAULT_BOARD_HEIGHT;
+    $secondDimension = DEFAULT_BOARD_WIDTH;
+
+    displayColumnHeaders($firstDimension);
+    displayRows($secondDimension, $firstDimension);
   }
 }
 
