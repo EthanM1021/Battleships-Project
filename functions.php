@@ -1,5 +1,8 @@
 <?php
 
+include "classes.php";
+include "constants.php";
+
 /**
  * Extracts the dimensions from the first line of the file
  *
@@ -17,6 +20,7 @@ function getDimensions(string $fileName): void {
     $secondDimension = strtok('');
 
     displayColumnHeaders($firstDimension);
+    displayRows($secondDimension, $firstDimension);
   }
 }
 
@@ -32,6 +36,26 @@ function displayColumnHeaders(int $dimension): void {
     foreach(range('A', $letter) as $eachLetter) {
       echo "     $eachLetter";
     }
+}
+
+/**
+ * Displays the rows in the console
+ *
+ * @param dimension to know how far to go down
+ * @param width to know how far to go across
+ */ 
+function displayRows(int $dimension, int $width): void {
+  $board = new Board();
+
+  for ($i = 1; $i <= $dimension; $i++) {
+    if ($i < 10) {
+      echo "\n\n$i    ";
+      $board::createBoard($width);
+    } else if ($i > 9 && $i < 100) {
+      echo "\n\n$i   ";
+      $board::createBoard($width);
+    }
+  }
 }
 
 /**
