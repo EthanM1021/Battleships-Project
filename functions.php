@@ -20,3 +20,14 @@ function getDimensions(string $fileName): void {
     echo $secondDimension;
   }
 }
+
+/**
+ * Gets rid of whitespace in a string
+ *
+ * @param string to change
+ *
+ * @return trimmed string
+ */ 
+function trimWhitespace(string $string): string {
+  return trim($string);
+}
