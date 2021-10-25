@@ -15,5 +15,8 @@ function getDimensions(string $fileName): void {
     
     $firstDimension = strtok($trimmed, 'x');
     $secondDimension = strtok('');
+
+    echo $firstDimension;
+    echo $secondDimension;
   }
 }
