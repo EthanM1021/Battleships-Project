@@ -16,9 +16,22 @@ function getDimensions(string $fileName): void {
     $firstDimension = strtok($trimmed, 'x');
     $secondDimension = strtok('');
 
-    echo $firstDimension;
-    echo $secondDimension;
+    displayColumnHeaders($firstDimension);
   }
+}
+
+/**
+ * Displays the column headers in the console
+ *
+ * @param dimension to see how far along to go
+ */ 
+function displayColumnHeaders(int $dimension): void {
+    $alphabet = range('A', 'Z');
+    $letter = $alphabet[$dimension - 1];
+
+    foreach(range('A', $letter) as $eachLetter) {
+      echo "     $eachLetter";
+    }
 }
 
 /**
